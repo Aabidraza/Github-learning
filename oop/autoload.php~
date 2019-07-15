@@ -1,0 +1,12 @@
+<?php
+       include "afridi.php";
+       include "john.php";
+       include "rahul.php";
+       
+       $afridi = new afridi();
+       $john = new john();
+       $rahul = new rahul();
+       
+       
+       
+       

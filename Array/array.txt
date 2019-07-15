@@ -1,0 +1,9 @@
+Array --->An array is a special variable, which can hold more than one value at a time.
+Arrays in PHP is a type of data structure that allows us to store multiple elements of similar data type under a single variable thereby saving us the effort of creating a different variable for every data. 
+Arrays are complex variables that allow us to store more than one value or a group of values under a single variable name.
+
+Types of Array--->There are basically three types of arrays in PHP:
+
+(1)Indexed or Numeric Arrays----->: An array with a numeric index where values are stored linearly.
+--------------------------------->  These type of arrays can be used to store any type of elements, but an index is always a number. By default, the index starts at zero. These arrays can be created in two different ways as shown in the following example:
+

@@ -1,0 +1,8 @@
+<?php 
+$x ="abid";
+echo "ddd".“\$x”;
+echo "www".“$$x”; 
+echo "rrr".“/$x”;
+echo "ttt".“$x;
+
+?>

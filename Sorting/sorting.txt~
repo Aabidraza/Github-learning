@@ -1,0 +1,192 @@
+Sorting --->The elements in an array can be sorted in alphabetical or numerical order, descending or ascending.
+Sorting refers to ordering data in an alphabetical, numerical order and increasing or decreasing.
+Types of sorting---->
+---------------------
+sort() and rsort() — For sorting indexed arrays
+asort() and arsort() — For sorting associative arrays by value
+ksort() and krsort() — For sorting associative arrays by key
+
+
+(1)sort() ---> sort arrays in ascending order. 
+example-->
+	<?php
+	$cars = array("Volvo", "BMW", "Toyota");
+	sort($cars);
+	print_r($cars);
+	//output->Array ( [0] => BMW [1] => Toyota [2] => Volvo )
+	?>
+	
+	
+	<?php
+	$numbers = array(4, 6, 2, 22, 11);
+	sort($numbers);
+	print_r($numbers);
+	//output->Array ( [0] => 2 [1] => 4 [2] => 6 [3] => 11 [4] => 22 )
+	?>
+	
+(2)rsort() ---> sort arrays in descending order.	
+example-->
+	<?php
+	$cars = array("Volvo", "BMW", "Toyota");
+	rsort($cars);
+	print_r($cars);
+	//output->Array ( [0] => Volvo [1] => Toyota [2] => BMW )
+	?>
+	
+	
+	<?php
+	$numbers = array(4, 6, 2, 22, 11);
+	rsort($numbers);
+	print_r($numbers);
+	//output->Array ( [0] => 22 [1] => 11 [2] => 6 [3] => 4 [4] => 2 )
+	?>
+	
+	
+(3)asort() ---> sort associative arrays in ascending order, according to the value.	
+example--->
+	<?php
+	$age = array("Peter"=>"35", "Ben"=>"43", "Joe"=>"37");
+	asort($age);
+	print_r($age);
+	//output->Array ( [Peter] => 35 [Joe] => 37 [Ben] => 43 )
+	?>
+
+
+(4)arsort() ---> sort associative arrays in descending order, according to the value.
+example--->
+	<?php
+	$age = array("Peter"=>"35", "Ben"=>"43", "Joe"=>"37");
+	arsort($age);
+	print_r($age);
+	//output->Array ( [Ben] => 43 [Joe] => 37 [Peter] => 35 )
+	?>
+
+
+(5)ksort() ---> sort associative arrays in ascending order, according to the key.
+example--->
+	<?php
+	$age = array("Peter"=>"35", "Ben"=>"43", "Joe"=>"37");
+	ksort($age);
+	print_r($age);
+	//output->Array ( [Ben] => 43 [Joe] => 37 [Peter] => 35 )
+	?>
+
+
+(6)krsort() ---> sort associative arrays in descending order, according to the key.
+example--->
+	<?php
+	$age = array("Peter"=>"35", "Ben"=>"43", "Joe"=>"37");
+	krsort($age);
+	print_r($age);
+	//output->Array ( [Peter] => 35 [Joe] => 37 [Ben] => 43 )
+	?>
+
+
+(7)array_multisort() ---> sort the multi dimension array.
+The array_multisort() is an inbuilt function in PHP which is used to sort multiple arrays at once or a multi-dimensional array with each individual dimension.
+The array_multisort() function returns a sorted array. You can assign one or more arrays. The function sorts the first array, and the other arrays follow, then, if two or more values are the same, it sorts the next array, and so on.
+
+Note: String keys will be maintained, but numeric keys will be re-indexed, starting at 0 and increase by 1.
+
+Note: You can assign the sorting order and the sorting type parameters after each array. If not specified, each array parameter uses the default values.
+
+example--->
+	<?php
+	$a=array("Dog","Cat","Horse","Bear","Zebra");
+	array_multisort($a);
+	print_r($a);
+	//OutPUT->Array ( [0] => Bear [1] => Cat [2] => Dog [3] => Horse [4] => Zebra )
+	?>
+
+	
+	<?php
+	$a1=array("Dog","Cat");
+	$a2=array("Fido","Missy");
+	array_multisort($a1,$a2);
+	print_r($a1);
+	print_r($a2);
+	//OutPUT->Array ( [0] => Cat [1] => Dog ) Array ( [0] => Missy [1] => Fido )
+	?>
+	
+	
+	<?php
+	$a1=array("Dog","Dog","Cat");
+	$a2=array("Pluto","Fido","Missy");
+	array_multisort($a1,$a2);
+	print_r($a1);
+	print_r($a2);
+	//OutPut->Array ( [0] => Cat [1] => Dog [2] => Dog ) Array ( [0] => Missy [1] => Fido [2] => Pluto )
+	?>
+	
+	
+	<?php
+	$a1=array("Dog","Dog","Cat");
+	$a2=array("Pluto","Fido","Missy");
+	array_multisort($a1,SORT_ASC,$a2,SORT_DESC);
+	print_r($a1);
+	print_r($a2);
+	//OutPut->Array ( [0] => Cat [1] => Dog [2] => Dog ) Array ( [0] => Missy [1] => Pluto [2] => Fido )
+	?>
+	
+	<?php
+	$a1=array(1,30,15,7,25);
+	$a2=array(4,30,20,41,66);
+	$num=array_merge($a1,$a2);
+	array_multisort($num,SORT_DESC,SORT_NUMERIC);
+	print_r($num);
+	//OutPut->Array ( [0] => 66 [1] => 41 [2] => 30 [3] => 30 [4] => 25 [5] => 20 [6] => 15 [7] => 7 [8] => 4 [9] => 1 )
+	?>
+
+
+(8)usort()---> Sort the array using user defined function.
+Sort the elements of the $a array using a user-defined comparison function:
+example--->
+	<?php
+	function my_sort($a,$b)
+	{
+	if ($a==$b) return 0;
+	  return ($a<$b)?-1:1;
+	}
+
+	$a=array(4,2,8,6);
+	usort($a,"my_sort");
+
+	$arrlength=count($a);
+	for($x=0;$x<$arrlength;$x++)
+	  {
+	  echo $a[$x];
+	  echo "<br>";
+	  }
+	//OutPUt->2
+		  4
+		  6
+		  8
+	?> 
+	
+The usort() function is used to sort an array by its values using a user-defined comparison function. If the array you wish to sort needs to be sorted by some non-trivial criteria, you should use this function.
+The function removes any existing keys and assigns new keys for the elements in the array.
+
+
+Syntax:
+usort(array_name, user-defined-function)
+
+Example:
+
+	<?php
+	function user_compare($x, $y)
+	{
+	if ($x == $y)
+	return 0;
+	else if ($x > $y)
+	return 1;
+	else
+	return -1;
+	}
+	$array1 = array(22,33,66,55,11);
+	usort($array1, 'user_compare');
+	foreach($array1 as $key => $value)
+	{
+	echo "$key: $value\n";
+	}
+	?>	
+	//OutPut-> 0: 11  1: 22  2: 33  3: 55  4: 66 

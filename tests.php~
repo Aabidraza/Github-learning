@@ -1,0 +1,34 @@
+<?php
+
+//indexing
+//https://www.tutorialspoint.com/dbms/dbms_indexing.htm
+//https://medium.com/omarelgabrys-blog/database-indexing-and-transactions-part-9-a24781d429f8
+//https://www.quora.com/What-is-indexing-in-database
+//https://www.geeksforgeeks.org/indexing-in-databases-set-1/
+
+	/********** Multiple Value ******************/
+	function multi($n){
+
+		if($n==0){
+			return 1;
+		}else{
+			return $n * multi($n-1);
+		}
+	}
+
+	echo "Multiplicatio : " .multi(3);echo "<br>";echo "<br>";
+	/*****************************************/
+	/*********** Print Value *****************/
+	function num($num){
+		echo $num;echo "<br>";
+		if($num==5){
+			return 1;
+		}else{
+			return num($num+1);
+		}
+	}
+	echo  "Print Value : " ; echo "<br>";num(1);
+	/*****************************************/
+	
+
+?>

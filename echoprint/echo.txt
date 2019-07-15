@@ -1,0 +1,205 @@
+Note---> https://www.sanfoundry.com/php-coding-questions-answers-print/
+
+echo and print----> echo and print are more or less the same. They are both used to output data to the screen.
+
+		The differences are small: echo has no return value while print has a return value of 1 so it can be used in expressions. echo can take multiple parameters (although such usage is rare) while print can take one argument. echo is marginally faster than print.
+		
+(A)----->The echo statement can be used with or without parentheses: echo or echo().
+
+(1)
+<?php
+echo "<h2>PHP is Fun!</h2>";
+echo "Hello world!<br>";
+echo "I'm about to learn PHP!<br>";
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+/*
+PHP is Fun!
+Hello world!
+I'm about to learn PHP!
+This string was made with multiple parameters.
+*/
+?> 
+
+(2)
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+echo "<h2>" . $txt1 . "</h2>";
+echo "Study PHP at " . $txt2 . "<br>";
+echo $x + $y;
+/*
+Learn PHP
+Study PHP at W3Schools.com
+9
+*/
+?>
+
+
+(3)
+<?php
+echo "Hello world </br> I am learning PHP";
+/*Hello world
+I am learning PHP
+*/
+Explanation: The break tag is used as break line.
+?>
+
+(4)
+<?php
+echo "This", "was", "a", "bad", "idea";
+//Thiswasabadidea
+Explanation: In an echo statement the comma operator is used to join strings.
+?>
+
+(5)
+<?php
+echo "This"."was"."a"."bad"."idea";
+//Thiswasabadidea
+Explanation: In an echo statement the dot operator is used to join strings.
+?>
+
+(6)
+<?php
+echo "This","was"|"a","bad"."idea";
+//Thiswasbadidea
+Explanation: You can use only comma and dot operator to join starings, other characters do not have the same function.
+?>
+
+(7)
+<?php
+$one = "Hello";
+$two = "World";
+echo $one, $two;
+//HelloWorld
+?>
+
+(8)
+<?php
+$one = "Hello";
+$two = "World";
+echo "$one$two";
+//HelloWorld
+Explanation: Even though both the variables are inside the double-quotes, the value of the variable is substituted and then printed to the screen.
+?>
+
+(9)
+<?php
+$one = "Hello";
+$two = "World";
+echo "$one"+"$two";
+//0
+Explanation: In an echo statement you can not use plus sign to join two strings.
+?>
+
+(10)
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo "My car is a {$cars[0]}";
+//My car is a Volvo
+Explanation: In the echo statement the {$cars[0]} is replaced by the 1st element in cars that is Volvo.
+?>
+
+(B)------->The print statement can be used with or without parentheses: print or print().
+
+(1)
+<?php
+print "<h2>PHP is Fun!</h2>";
+print "Hello world!<br>";
+print "I'm about to learn PHP!";
+/*
+PHP is Fun!
+Hello world!
+I'm about to learn PHP!
+*/
+?> 
+
+
+(2)
+<?php
+print "echo hello world";
+//echo hello world
+Explanation: The print statement will print whatever is present inside the double-quotes.
+?>
+
+(3)
+<?php
+$one = 1;
+print($one);
+print $one;
+//11
+Explanation: Print can be used with or without parentheses.
+?>
+
+(4)
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+print $cars[2];
+//Toyota
+Explanation: Print statement can be used to output a specific array member.
+?>
+
+(5)
+<?php
+$one = "one";
+$two = "two";
+print($one$two);
+//error
+Explanation: The above syntax will produce an error, unlike the echo statement.
+?>
+
+(6)
+<?php
+$one = "one";
+$two = "two";
+print($one,$two);
+//error
+Explanation: The above syntax will produce an error, unlike the echo statement.
+?>
+
+(7)
+<?php
+$one = "one";
+$two = "two";
+print("$one$two");
+//onetwo
+Explanation: This is same as the echo statement.
+?>
+
+(8)
+<?php
+$one = "one";
+$two = "two";
+print($one==$two);
+//nothing
+Explanation: Since we are equating two unequal strings we do not get any output.
+?>
+
+(9)
+<?php
+$one = "one";
+$two = "one";
+print($one == $two);
+//1
+Explanation: Since both the strings are equal the result 1 is printed on the screen.
+?>
+
+(10)
+<?php
+print "Hello world!<br>";
+print "I'm about to learn PHP!";
+/*
+ Hello world!
+I’m about to learn PHP!
+*/
+Explanation: Most of the properties of echo and print are same. Strings can contain HTML markup.
+?>
+
+(11)
+<?php
+print("this"."was"."a"."bad"."idea");
+//thiswasabadidea
+Explanation: You can use the dot operator like in echo but you can not use the comma operator to do the same.
+?>

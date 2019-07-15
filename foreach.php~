@@ -1,0 +1,22 @@
+<?php
+//https://www.w3resource.com/php-exercises/php-for-loop-exercises.php
+$data = array("Asghar" => "30","Abid" => "26", "Abbas" => "27", "Mohd" => "20");
+
+$a = count($data);
+$i=1;
+foreach($data as $key=>$values){
+	$j=1;
+	foreach($data as $key1=>$values1){ 
+		if($j==$i+1){
+		        echo $key1 .' : '.$values1; echo "<br>";
+		}else if($i==$a && $j == 1){
+			 echo $key1 .' : '.$values1; echo "<br>";
+		}
+		$j++;	
+	}	
+	$i++;
+}
+
+?>
+
+

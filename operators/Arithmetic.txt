@@ -1,0 +1,42 @@
+Operators------>Operators are used to perform operations on variables and values.
+
+PHP divides the operators in the following groups:
+
+(1)Arithmetic operators
+(2)Assignment operators
+(3)Comparison operators
+(4)Increment/Decrement operators
+(5)Logical operators
+(6)String operators
+(7)Array operators
+
+(1)Arithmetic operators ---->The PHP arithmetic operators are used with numeric values to perform common arithmetical operations, such as addition, subtraction, multiplication etc.
+
+ operator    Name                 Example     Result
+      +		Addition             $x + $y	 Sum of $x and $y
+      -         Subtraction          $x - $y     Difference of $x and $y	
+      *         Multiplication       $x * $y     Product of $x and $y
+      /         Division             $x / $y     Quotient of $x and $y
+      %         Modulus              $x % $y     Remainder of $x divided by $y
+      **        Exponentiation       $x ** $y    Result of raising $x to the $y'th power (Introduced in PHP 5.6)
+
+<?php
+$x = 10;  
+$y = 6;
+
+echo $x + $y;
+//16
+
+echo $x - $y;
+//4
+
+echo $x * $y;
+//60
+
+echo $x / $y;
+//1.6666666666667
+
+echo $x % $y;
+//4
+
+?>  
